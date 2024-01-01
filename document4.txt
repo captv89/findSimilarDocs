@@ -1,0 +1,5 @@
+Computing the denominator of this formulation involves performing a full softmax over the entire vocabulary words, which are often large (105-107) terms.
+
+The noise contrastive estimation (NCE) loss function is an efficient approximation for a full softmax. With an objective to learn word embeddings instead of modeling the word distribution, the NCE loss can be simplified to use negative sampling.
+
+The simplified negative sampling objective for a target word is to distinguish the context word from num_ns negative samples drawn from noise distribution Pn(w) of words. More precisely, an efficient approximation of full softmax over the vocabulary is, for a skip-gram pair, to pose the loss for a target word as a classification problem between the context word and num_ns negative samples.
